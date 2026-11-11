@@ -1,0 +1,32 @@
+{
+  "name": "सुजनी — सांस्कृतिक पत्रिका",
+  "short_name": "सुजनी",
+  "description": "सुजनी दुनिया भर की सांस्कृतिक पत्रकारिता को हिंदी में पढ़ने की जगह है — सिनेमा, साहित्य, संगीत, नाटक और चित्रकला पर लंबे, संपादित सार, मूल स्रोतों के लिंक के साथ।",
+  "lang": "hi",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2ecdf",
+  "theme_color": "#f2ecdf",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

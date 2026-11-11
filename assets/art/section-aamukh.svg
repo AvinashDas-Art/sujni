@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="THE OPENING">
+  <defs>
+    
+    <pattern id="grain-1hr3s6c" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.7" fill="#f2ecdf" opacity="0.10"/>
+      <circle cx="4" cy="4" r="0.5" fill="#f2ecdf" opacity="0.06"/>
+    </pattern>
+    <pattern id="weave-1hr3s6c" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+      <path d="M0 9h18" stroke="#f2ecdf" stroke-width="0.7" opacity="0.10"/>
+      <path d="M9 0v18" stroke="#f2ecdf" stroke-width="0.5" opacity="0.06"/>
+    </pattern>
+    <linearGradient id="bg-1hr3s6c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d2a52"/><stop offset="1" stop-color="#263764"/>
+    </linearGradient>
+    <pattern id="curtain-1hr3s6c" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M0 0c8 10 8 12 0 22M11 0c8 10 8 12 0 22" fill="none" stroke="#f2ecdf" stroke-width="1" opacity="0.25"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg-1hr3s6c)"/>
+  <rect width="1200" height="800" fill="url(#weave-1hr3s6c)"/>
+  <rect width="1200" height="800" fill="url(#grain-1hr3s6c)"/>
+  <g opacity="0.16" fill="#f2ecdf" font-family="Georgia, 'Times New Roman', serif">
+    <text x="560" y="690" font-size="360" font-weight="700" text-anchor="middle">01</text>
+  </g>
+  
+    <circle cx="600" cy="300" r="168" fill="#c8452b" opacity="0.95"/>
+    <circle cx="600" cy="300" r="212" fill="none" stroke="#d0ad69" stroke-width="2" opacity="0.8"/>
+    <circle cx="600" cy="300" r="252" fill="none" stroke="#f2ecdf" stroke-width="1" stroke-dasharray="2 10" opacity="0.45"/>
+    <path d="M0 430 C220 390, 380 470, 600 430 S980 390, 1200 450 L1200 800 L0 800 Z" fill="#263764" opacity="0.65"/>
+    <path d="M0 470 C220 430, 380 510, 600 470 S980 430, 1200 490" fill="none" stroke="#f2ecdf" stroke-width="2" opacity="0.5"/>
+    
+    <g>
+      <rect x="120" y="470" width="330" height="210" fill="none" stroke="#f2ecdf" stroke-width="2" opacity="0.75"/>
+      <rect x="750" y="470" width="330" height="210" fill="none" stroke="#f2ecdf" stroke-width="2" opacity="0.75"/>
+      <path d="M120 470h330v210H120zM750 470h330v210H750z" fill="#263764" opacity="0.3"/>
+      <path d="M280 600 C330 520, 390 670, 450 580" fill="none" stroke="#c8452b" stroke-width="5"/>
+      <path d="M820 610 C900 520, 940 650, 1040 540" fill="none" stroke="#d0ad69" stroke-width="4"/>
+      <path d="M160 510h250M160 540h170M790 510h250M790 540h150" stroke="#f2ecdf" stroke-width="2" opacity="0.45"/>
+    </g>
+    <path d="M120 380 C300 330, 470 420, 600 380 S900 300, 1080 370" fill="none" stroke="#f2ecdf" stroke-width="3" stroke-dasharray="3 10" opacity="0.8"/>
+    <g fill="#f2ecdf">
+      <path d="M600 300l18 18m0-18l-18 18" stroke="#f2ecdf" stroke-width="2" opacity="0.45"/>
+    </g>
+  
+    <g stroke="#f2ecdf" stroke-width="2" opacity="0.65">
+      <path d="M38 38h22M38 38v22" />
+      <path d="M1162 38h-22M1162 38v22" />
+      <path d="M38 762h22M38 762v-22" />
+      <path d="M1162 762h-22M1162 762v-22" />
+    </g>
+    <g fill="#f2ecdf" opacity="0.55">
+      <circle cx="600" cy="38" r="2.2"/><circle cx="600" cy="762" r="2.2"/>
+      <circle cx="38" cy="400" r="2.2"/><circle cx="1162" cy="400" r="2.2"/>
+    </g>
+  <g font-family="'Helvetica Neue', Arial, sans-serif" fill="#f2ecdf">
+    <text x="80" y="86" font-size="17" letter-spacing="5">THE OPENING</text>
+    <text x="80" y="112" font-size="12" letter-spacing="3" opacity="0.62">A DAILY OF ARTS &amp; LETTERS</text>
+    <text x="1120" y="86" text-anchor="end" font-size="16" letter-spacing="3" opacity="0.85">I / 01</text>
+    <text x="1120" y="112" text-anchor="end" font-size="12" letter-spacing="3" opacity="0.55">ISSUE 001</text>
+  </g>
+  <g font-family="'Helvetica Neue', Arial, sans-serif" fill="#f2ecdf" opacity="0.78">
+    <text x="80" y="736" font-size="12" letter-spacing="4">THE OPENING</text>
+    <text x="1120" y="736" text-anchor="end" font-size="12" letter-spacing="3">01 / 02</text>
+  </g>
+</svg>

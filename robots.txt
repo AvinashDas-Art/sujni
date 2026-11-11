@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sujni.com/sitemap.xml
