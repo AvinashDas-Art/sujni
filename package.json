@@ -1,0 +1,14 @@
+{
+  "name": "sujni",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "सुजनी — कला, संस्कृति, साहित्य और सिनेमा की दैनिक पत्रिका",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "gather": "node scripts/gather.mjs",
+    "check": "node scripts/check.mjs",
+    "serve": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs"
+  }
+}

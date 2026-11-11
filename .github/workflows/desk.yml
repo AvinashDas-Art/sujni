@@ -1,0 +1,27 @@
+name: Sujni Desk — daily shortlist
+
+on:
+  schedule:
+    # 00:15 UTC = 05:45 Asia/Kolkata
+    - cron: "15 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gather:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Gather feeds
+        run: node scripts/gather.mjs
+      - name: Upload shortlist
+        uses: actions/upload-artifact@v4
+        with:
+          name: sujni-desk-shortlist
+          path: data/inbox/
+          retention-days: 14
