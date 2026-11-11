@@ -24,6 +24,7 @@ const negative = [
   "box office", "collection", "day 1", "day 2", "day 3", "day 4", "day 5", "day 6", "worldwide gross",
   "birthday", "airport look", "vacation", "bigg boss", "reality show", "photos", "viral video", "recipe",
   "भोजपुरी", "बॉक्स ऑफ़िस", "कलेक्शन", "पहले दिन", "दूसरे दिन", "जन्मदिन", "एयरपोर्ट", "बिग बॉस",
+  "naxal", "election", "parliament", "assembly", "cricket", "football", "sensex", "stock market", "rupee", "budget", "recruitment", "admit card", "exam result", "weather", "traffic", "accident", "murder", "rape", "theft", "arrest", "police", "court", "protest", "scheme", "yojana", "inaugurat", "launch", "modi", "rahul gandhi", "bjp", "congress",
   "फोटो", "वायरल वीडियो", "रेसिपी", "मंदिर में", "पूजा", "त्योहार की तैयारी", "स्कूल में", "प्रतियोगिता",
 ];
 
@@ -90,11 +91,19 @@ function parseFeed(xml, source) {
   return out;
 }
 
+function hasWord(text, word) {
+  const w = word.toLowerCase();
+  if (/^[a-z0-9 ]+$/.test(w)) {
+    return new RegExp(`(^|[^a-z0-9])${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^a-z0-9]|$)`, "i").test(text);
+  }
+  return text.includes(w);
+}
+
 function scoreItem(item) {
   const text = `${item.title} ${item.description}`.toLowerCase();
   let score = 0;
-  for (const w of positive) if (text.includes(w.toLowerCase())) score += 2;
-  for (const w of negative) if (text.includes(w.toLowerCase())) score -= 4;
+  for (const w of positive) if (hasWord(text, w)) score += 2;
+  for (const w of negative) if (hasWord(text, w)) score -= 5;
   if (item.publishedAt) {
     const age = (Date.now() - new Date(item.publishedAt).getTime()) / 86400000;
     if (age <= 2) score += 3;
