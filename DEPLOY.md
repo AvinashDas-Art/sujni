@@ -17,7 +17,19 @@ cd dist
 git add -A && git commit -m "publish: $(date +%F)" && git push origin gh-pages
 ```
 
-या GitHub Actions वर्कफ़्लो `.github/workflows/publish.yml` का `Run workflow` दबाएँ।
+सबसे आसान तरीका: GitHub Actions वर्कफ़्लो **Publish Sujni** का `Run workflow` दबाएँ। यह ख़ुद बिल्ड और gh-pages पर प्रकाशन करता है।
+
+अगर पहली बार हाथ से करना हो:
+
+```bash
+npm run build
+cd dist
+git init -b gh-pages
+git add -A
+git commit -m "publish"
+git remote add origin git@github.com:AvinashDas-Art/sujni.git
+git push -f origin gh-pages
+```
 
 ## 2. sujni.com को GitHub Pages से जोड़ें
 
@@ -70,7 +82,7 @@ Custom domain सेट करने से पहले `CNAME` फ़ाइल
 अगर DNS बदलने के बाद बिल्ड में CNAME चाहिए:
 
 ```bash
-CUSTOM_DOMAIN=sujni.com npm run build
+CUSTOM_DOMAIN=sujni.com OG_IMAGE=https://sujni.com/assets/og.png npm run build
 ```
 
 (यह सुविधा बिल्ड में जोड़ी गई है।)

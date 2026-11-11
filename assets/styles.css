@@ -424,6 +424,14 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .issue-index .nm { font-family: var(--display); font-size: 26px; line-height: 1.1; }
 .issue-index .ct { margin-top: auto; font-family: var(--sans); font-size: 11px; letter-spacing: 0.05em; color: var(--ink-faint); }
 
+
+.stats-strip { border-bottom: 1px solid var(--rule); background: var(--paper); }
+.stats-in { display: grid; grid-template-columns: repeat(4, 1fr); }
+.stat { padding: 17px 0 16px 26px; border-left: 1px solid var(--rule-soft); }
+.stat:first-child { border-left: 0; padding-left: 0; }
+.stat b { display: block; font-family: var(--display); font-weight: 400; font-size: 38px; line-height: 1; color: var(--red); }
+.stat span { display: block; margin-top: 4px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.04em; color: var(--ink-faint); }
+
 /* ---------- editor's note ---------- */
 .note-band { border-bottom: 1px solid var(--rule); }
 .note-grid { display: grid; grid-template-columns: 0.36fr 0.64fr; gap: clamp(24px, 5vw, 72px); padding: 38px 0; align-items: center; }
@@ -791,6 +799,12 @@ h1, h2, h3, h4, p { margin-top: 0; }
   .hero-art .art-frame { aspect-ratio: 3 / 2; }
   .hero-art .seal { width: 72px; height: 72px; right: 12px; bottom: 22px; }
   .issue-index-in { grid-template-columns: repeat(2, 1fr); }
+  .stats-in { grid-template-columns: repeat(2, 1fr); }
+  .stat { padding: 13px 0 12px 14px; }
+  .stat:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .stat:nth-child(n + 3) { border-top: 1px solid var(--rule-soft); }
+  .stat b { font-size: 32px; }
+  .stat span { font-size: 10.5px; }
   .issue-index a { min-height: 96px; padding: 14px 12px; }
   .issue-index a:nth-child(3), .issue-index a:nth-child(5) { border-left: 0; }
   .issue-index a:nth-child(n + 3) { border-top: 1px solid var(--rule-soft); }
@@ -896,7 +910,7 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .article-tools .is-playing { color: var(--red); border-color: var(--red); }
 .mainnav.is-scrolled { box-shadow: 0 8px 24px rgba(27, 25, 22, 0.08); }
 [data-size-toggle] { font-family: var(--display); font-size: 18px; line-height: 1; }
-#corrections { scroll-margin-top: 80px; }
+#corrections, #sources { scroll-margin-top: 84px; }
 @media (max-width: 680px) {
   .article-body--lg { font-size: 20px; }
 }

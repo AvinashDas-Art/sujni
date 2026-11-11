@@ -10,6 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
 const SITE_URL = (process.env.SITE_URL || site.url).replace(/\/+$/, "");
+const OG_IMAGE = process.env.OG_IMAGE || "https://avinashdas-art.github.io/sujni/assets/og.png";
 const BUILD_DATE = new Date();
 
 const sectionOrder = Object.fromEntries(sections.map((s, i) => [s.id, i]));
@@ -217,7 +218,7 @@ function renderFooter(root) {
           <h4>जुड़िए</h4>
           <a href="${href(root, "feed.xml")}">RSS फ़ीड</a>
           <a href="mailto:${site.email}">${site.email}</a>
-          <a href="${href(root, "srot/#corrections")}">सुधार भेजें</a>
+          <a href="https://github.com/AvinashDas-Art/sujni/issues/new?title=Sujni%20correction" rel="noopener" target="_blank">सुधार भेजें</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -260,7 +261,7 @@ function layout({
   const fullTitle = title === site.name ? site.title : `${title} — ${site.name}`;
   const desc = description || site.description;
   const canonicalUrl = canonical(canonicalPath);
-  const ogImage = `${SITE_URL}/assets/og.png`;
+  const ogImage = OG_IMAGE;
   return `<!doctype html>
 <html lang="hi" data-root="${root}">
 <head>
@@ -280,6 +281,7 @@ function layout({
   <meta property="og:image" content="${escapeHtml(ogImage)}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="सुजनी — अनेक धागों से सीती एक सांस्कृतिक पत्रिका">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title === site.name ? site.title : title)}">
   <meta name="twitter:description" content="${escapeHtml(desc)}">
@@ -358,6 +360,15 @@ function renderHome() {
 
   <section class="issue-index" aria-label="इस अंक के धागे">
     <div class="wrap issue-index-in">${issueItems}</div>
+  </section>
+
+  <section class="stats-strip" aria-label="इस अंक के आँकड़े">
+    <div class="wrap stats-in">
+      <div class="stat"><b>२४</b><span>टुकड़े इस अंक में</span></div>
+      <div class="stat"><b>६</b><span>सांस्कृतिक धागे</span></div>
+      <div class="stat"><b>८</b><span>भाषाओं की दुनिया</span></div>
+      <div class="stat"><b>४१</b><span>स्रोत-सूची में</span></div>
+    </div>
   </section>
 
   <section class="note-band">
@@ -456,7 +467,7 @@ function renderSectionPage(s) {
   const note = bySection(s.id).find((a) => a.isNote);
   const lead = list[0];
   const rest = list.slice(1);
-  const restGrid = rest.length === 4 ? "grid-4" : "grid-3";
+  const restGrid = rest.length === 4 ? "grid-2" : "grid-3";
   const totalCount = list.length + (note ? 1 : 0);
   const content = `
   <div class="page-head">
@@ -718,6 +729,7 @@ function renderAbout() {
         <p>सुजनी को पढ़ने, उसके लिए लिखने, या किसी सुधार/सुझाव के लिए लिखें: <a href="mailto:${site.email}" style="text-decoration:underline">${site.email}</a></p>
         <p>हम मूल लेखों का अनुवाद/सार प्रकाशित करते हैं, उन्हें कॉपी नहीं करते। अगर आपको लगता है कि किसी टुकड़े में ग़लती है या किसी अधिकार का उल्लंघन हुआ है, तो हमें लिखें — हम जल्द से जल्द सुधार करेंगे।</p>
         <a class="btn btn--small" href="../srot/">स्रोत और प्रक्रिया पढ़ें</a>
+        <a class="btn btn--small" style="margin-left:8px" href="https://github.com/AvinashDas-Art/sujni/issues/new?title=Sujni%20correction" target="_blank" rel="noopener">सुधार भेजें ↗</a>
       </div>
     </div>
   </div>`;
@@ -770,7 +782,7 @@ function renderSources() {
     <div class="article-source-box">
       <div class="box-head"><span>सुधार और अधिकार</span><span>Corrections</span></div>
       <div class="box-body">
-        <p>अगर किसी सार में तथ्यात्मक ग़लती है, तो हम उसे सुधारेंगे। अगर किसी प्रकाशक या लेखक को लगता है कि हमारे सार से उनके अधिकार का उल्लंघन हुआ है, तो वे <a href="mailto:${site.email}" style="text-decoration:underline">${site.email}</a> पर लिखें। हम मूल लेखों को होस्ट नहीं करते; हम उनका सार और लिंक देते हैं।</p>
+        <p>अगर किसी सार में तथ्यात्मक ग़लती है, तो हम उसे सुधारेंगे। अगर किसी प्रकाशक या लेखक को लगता है कि हमारे सार से उनके अधिकार का उल्लंघन हुआ है, तो वे <a href="mailto:${site.email}" style="text-decoration:underline">${site.email}</a> पर लिखें, या <a href="https://github.com/AvinashDas-Art/sujni/issues/new?title=Sujni%20correction" target="_blank" rel="noopener" style="text-decoration:underline">GitHub पर सुधार दर्ज करें</a>। हम मूल लेखों को होस्ट नहीं करते; हम उनका सार और लिंक देते हैं।</p>
         <p>सुजनी के सार सुजनी संपादकीय डेस्क के लेखन हैं। मूल लेखों के सभी अधिकार उनके लेखकों और प्रकाशकों के पास हैं।</p>
       </div>
     </div>
